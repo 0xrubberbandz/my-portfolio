@@ -67,20 +67,19 @@ function App() {
 
   const renderHomePage = () => (
     <main>
-      <h1 className="portfolio-title">Tristan Jolly — Portfolio</h1>
+      <h1 className="portfolio-title">My Portfolio</h1>
       <p className="portfolio-description">
-        I've been fascinated by security and cryptography ever since watching James Bond outwit entire networks with a single gadget.
+        Hi, I'm Tristan. I've been fascinated by security and cryptography ever since watching James Bond outwit entire networks with a single gadget.
         That spark grew into a drive to build systems that make trust and identity verifiable online.
-        I'm currently building <a className="hyperlink" href="https://x.com/CrystalExch" target="_blank" rel="noopener noreferrer">@CrystalExch</a> —
+        I'm currently building <a className="hyperlink" href="https://x.com/CrystalExch" target="_blank" rel="noopener noreferrer">@CrystalExch</a> , 
         a fully on-chain exchange redefining how transparency and trading work on the blockchain.
-        In my spare time, I love building gadgets that come to life — like a Face ID door lock and a hidden Morse code communicator —
-        where hardware meets code and creativity turns into control.
+        In my free time, I absolutely love building unique gadgets, which you can check out below!
       </p>
 
       <div className="portfolio-posts">
-        <p><span className="date">October 2025</span> &nbsp;&nbsp; Building a Face ID Door Lock with ESP32</p>
-        <p><span className="date">September 2025</span> &nbsp;&nbsp; Morse Code Communicator Hidden in Plain Sight</p>
-        <p><span className="date">August 2025</span> &nbsp;&nbsp; Crystal Exchange — Decentralized, On-Chain, No Middlemen</p>
+        <p><span className="date">October 2024 - December 2024</span> &nbsp;&nbsp; Building a face ID door lock with ESP32</p>
+        <p><span className="date">January 2025 - July 2025</span> &nbsp;&nbsp; Morse code communicator device</p>
+        <p><span className="date">July 2024 - Current</span> &nbsp;&nbsp; Crystal Exchange, the first fully on-chain orderbook</p>
       </div>
 
       <div className="portfolio-links">
@@ -136,16 +135,6 @@ function App() {
                 ))}
               </div>
 
-              <div className="project-links">
-                <a href={project.github} target="_blank" rel="noopener noreferrer" className="project-link">
-                  ↗ View on GitHub
-                </a>
-                {project.link && (
-                  <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-link">
-                    ↗ Visit Project
-                  </a>
-                )}
-              </div>
             </div>
           </div>
         ))}
@@ -194,86 +183,6 @@ function App() {
         </p>
       </div>
 
-      <div className="about-section">
-        <h2 className="section-title">Technical Expertise</h2>
-        <div className="skills-grid">
-          <div className="skill-category">
-            <h3 className="skill-title">Blockchain & Web3</h3>
-            <ul className="skill-list">
-              <li>Solidity smart contract development</li>
-              <li>Ethereum & EVM-compatible chains</li>
-              <li>DeFi protocols and tokenomics</li>
-              <li>Web3.js, Ethers.js integration</li>
-            </ul>
-          </div>
-
-          <div className="skill-category">
-            <h3 className="skill-title">Security & Cryptography</h3>
-            <ul className="skill-list">
-              <li>Cryptographic protocols</li>
-              <li>Biometric authentication systems</li>
-              <li>Network security & penetration testing</li>
-              <li>Zero-knowledge proofs</li>
-            </ul>
-          </div>
-
-          <div className="skill-category">
-            <h3 className="skill-title">Hardware & IoT</h3>
-            <ul className="skill-list">
-              <li>ESP32, Arduino development</li>
-              <li>PCB design (KiCad)</li>
-              <li>Embedded systems programming</li>
-              <li>RF communication protocols</li>
-            </ul>
-          </div>
-
-          <div className="skill-category">
-            <h3 className="skill-title">Software Development</h3>
-            <ul className="skill-list">
-              <li>React, TypeScript, Node.js</li>
-              <li>Python for automation & ML</li>
-              <li>C++ for performance-critical code</li>
-              <li>System architecture & design</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div className="about-section">
-        <h2 className="section-title">Philosophy</h2>
-        <p className="section-text">
-          I believe in building with purpose and transparency. Whether it's a smart contract or a hardware device, 
-          every system I create should be understandable, verifiable, and respect user privacy. Technology should 
-          empower individuals, not consolidate power in the hands of a few.
-        </p>
-        <p className="section-text">
-          I'm driven by the challenge of solving complex problems with elegant solutions. The best systems are 
-          those that work seamlessly in the background, providing security and trust without friction or 
-          unnecessary complexity.
-        </p>
-      </div>
-
-      <div className="about-section">
-        <h2 className="section-title">Get in Touch</h2>
-        <p className="section-text">
-          I'm always interested in discussing new ideas, collaborating on projects, or just chatting about 
-          security, crypto, and cool gadgets. Feel free to reach out!
-        </p>
-        <div className="contact-links">
-          <a href="mailto:tristan.jolly@outlook.com" className="contact-link">
-            ✉️ tristan.jolly@outlook.com
-          </a>
-          <a href="https://github.com/0xrubberbandz" target="_blank" rel="noopener noreferrer" className="contact-link">
-            ↗ GitHub
-          </a>
-          <a href="https://www.linkedin.com/in/tristan-jolly-a8849133b/" target="_blank" rel="noopener noreferrer" className="contact-link">
-            ↗ LinkedIn
-          </a>
-          <a href="https://x.com/CrystalExch" target="_blank" rel="noopener noreferrer" className="contact-link">
-            ↗ Twitter/X
-          </a>
-        </div>
-      </div>
 
       <footer className="portfolio-footer">
         © 2025 Tristan Jolly
