@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import PrismaticBurst from "./components/PrismaticBurst.tsx"
 import GlassSurface from "./components/GlassSurface.tsx"
+import portfolioicon from "./assets/aboutmeicon.png"
 import "./App.css"
 
 function App() {
@@ -151,7 +152,7 @@ function App() {
       <h1 className="portfolio-title">About Me</h1>
       
       <div className="about-image-placeholder">
-          <img src="/portfolioicon.png" alt="Profile" />
+          <img src={portfolioicon} alt="Profile" />
       </div>
 
       <div className="about-section">
