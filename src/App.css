@@ -11,7 +11,7 @@ html, body {
   color: #fff;
   font-family: 'Montserrat', sans-serif;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   overflow-x: hidden;
 }
 
@@ -23,12 +23,19 @@ body {
   overflow-y: auto;
 }
 
+
+
 .portfolio-container {
-  width: 720px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 100%;
   padding: 16px;
   border-radius: 10px;
   z-index: 100;
   margin-bottom: 60px;
+  z-index: 10;
 }
 
 .header nav {
@@ -64,7 +71,7 @@ body {
 }
 
 .portfolio-posts p {
-  font-size: 0.8rem;
+  font-size: 0.95rem;
   opacity: 0.9;
   margin: 6px 0;
 }
@@ -74,6 +81,7 @@ body {
   gap: 16px;
   margin-top: 28px;
   font-size: 0.8rem;
+  pointer-events: all;
 }
 
 .portfolio-links a {
@@ -109,7 +117,6 @@ body {
   text-shadow: #c8cae6 0px 0px 8px;
 }
 
-/* Projects Page Styles */
 .projects-container {
   width: 800px;
 }
@@ -123,14 +130,15 @@ body {
 
 .project-card {
   background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 12px;
+  border: 1.5px solid rgba(255, 255, 255, 0.05);
+  border-radius: 24px;
   padding: 24px;
+  backdrop-filter: blur(10px);
+  overflow: hidden;
 }
 
 .project-card:hover {
   background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .project-image-placeholder {
@@ -142,7 +150,6 @@ body {
   align-items: center;
   justify-content: center;
   margin-bottom: 24px;
-  border: 1px dashed rgba(255, 255, 255, 0.15);
 }
 
 .placeholder-content {
@@ -216,16 +223,8 @@ body {
 .highlights-list li {
   font-size: 0.85rem;
   opacity: 0.8;
-  padding-left: 20px;
   position: relative;
   line-height: 1.5;
-}
-
-.highlights-list li::before {
-  content: "→";
-  position: absolute;
-  left: 0;
-  color: #aaaecf;
 }
 
 .project-tech {
@@ -358,7 +357,6 @@ body {
   text-shadow: #c8cae6 0px 0px 4px;
 }
 
-/* Responsive Styles */
 @media (max-width: 850px) {
   .portfolio-container,
   .projects-container,
@@ -394,9 +392,48 @@ body {
   }
 }
 
-
 .portfolio-wrapper {
-  width: 100%;
-  max-width: 650px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-width: 100vw;
   color: #fff;
+}
+
+.pixel-canvas {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100vw !important;
+  height: 100vh !important;
+  pointer-events: auto !important;
+  z-index: 10;
+  opacity: 0.5;
+  mix-blend-mode: screen;
+}
+
+
+
+.header-glass{
+  transition: all 0.2s;
+}
+
+.header-glass:hover{
+  scale: 1.15;
+  border-radius: 5px !important;
+}
+
+.header-glass.active{
+  scale: .9;
+}
+
+
+.main-container{
+  max-width: 700px;
+}
+
+.header{
+  max-width: 700px;
+  pointer-events: all;
 }

@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import PrismaticBurst from "./components/PrismaticBurst.tsx"
+import PixelTrail from "./components/PixelTrail.tsx"
+
 import GlassSurface from "./components/GlassSurface.tsx"
 import portfolioicon from "./assets/aboutmeicon.png"
 import "./App.css"
@@ -10,7 +12,7 @@ function App() {
   const projects = [
     {
       title: "Face ID Door Lock with ESP32",
-      date: "October 2025",
+      date: "October 2024 - December 2024",
       description: "A sophisticated biometric security system that combines facial recognition with IoT hardware. Built using ESP32-CAM module with a custom-trained neural network for face detection and recognition. Features real-time processing, encrypted communication, and seamless integration with home automation systems.",
       tech: ["ESP32", "TensorFlow Lite", "C++", "Python", "MQTT", "Home Assistant"],
       github: "https://github.com/0xrubberbandz/faceid-lock",
@@ -23,7 +25,7 @@ function App() {
     },
     {
       title: "Morse Code Communicator Hidden in Plain Sight",
-      date: "September 2025",
+      date: "January 2025 - July 2025",
       description: "A covert communication device disguised as an everyday object, featuring haptic feedback and LED indicators for Morse code transmission. Built with Arduino and custom PCB design, this gadget enables secure communication in environments where traditional methods might be monitored or restricted.",
       tech: ["Arduino", "C++", "PCB Design", "KiCad", "RF Communication", "Haptic Feedback"],
       github: "https://github.com/0xrubberbandz/morse-gadget",
@@ -35,8 +37,8 @@ function App() {
       ]
     },
     {
-      title: "Crystal Exchange — Decentralized Trading Platform",
-      date: "August 2025",
+      title: "Crystal Exchange — First fully On-chain Orderbook",
+      date: "July 2024 - Current",
       description: "A fully on-chain decentralized exchange that eliminates intermediaries and maximizes transparency. Built on Ethereum with custom smart contracts for automated market making, liquidity pools, and trustless trading. Crystal Exchange redefines DeFi by ensuring every transaction is verifiable and censorship-resistant.",
       tech: ["Solidity", "Ethereum", "React", "Web3.js", "Hardhat", "The Graph", "IPFS"],
       github: "https://github.com/CrystalExch",
@@ -53,13 +55,13 @@ function App() {
   const renderNavigation = () => (
     <header className="header">
       <nav>
-        <GlassSurface width={80} height={30} borderRadius={24} className="my-custom-class">
+        <GlassSurface width={80} height={30} borderRadius={24} className="header-glass">
           <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('home'); }}>home</a>
         </GlassSurface>
-        <GlassSurface width={80} height={30} borderRadius={24} className="my-custom-class">
+        <GlassSurface width={80} height={30} borderRadius={24} className="header-glass">
           <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('projects'); }}>projects</a>
         </GlassSurface>
-        <GlassSurface width={80} height={30} borderRadius={24} className="my-custom-class">
+        <GlassSurface width={80} height={30} borderRadius={24} className="header-glass">
           <a href="#" onClick={(e) => { e.preventDefault(); setCurrentPage('about'); }}>about</a>
         </GlassSurface>
       </nav>
@@ -67,14 +69,14 @@ function App() {
   )
 
   const renderHomePage = () => (
-    <main>
+    <main className="main-container">
       <h1 className="portfolio-title">My Portfolio</h1>
       <p className="portfolio-description">
         Hi, I'm Tristan. I've been fascinated by security and cryptography ever since watching James Bond outwit entire networks with a single gadget.
         That spark grew into a drive to build systems that make trust and identity verifiable online.
         I'm currently building <a className="hyperlink" href="https://x.com/CrystalExch" target="_blank" rel="noopener noreferrer">@CrystalExch</a> , 
         a fully on-chain exchange redefining how transparency and trading work on the blockchain.
-        In my free time, I absolutely love building unique gadgets, which you can check out below!
+        In my free time, I absolutely love building gadgets, which you can check out in the project section below!
       </p>
 
       <div className="portfolio-posts">
@@ -96,19 +98,19 @@ function App() {
   )
 
   const renderProjectsPage = () => (
-    <main>
+    <main className="main-container">
       <h1 className="portfolio-title">Projects</h1>
       <p className="portfolio-description">
-        A collection of hardware and software projects at the intersection of security, cryptography, and creative engineering.
+        A list of projects that I have built over the years that you might be interested in!
       </p>
 
       <div className="projects-grid">
         {projects.map((project, index) => (
-          
+
+  
           <div key={index} className="project-card">
             <div className="project-image-placeholder">
               <div className="placeholder-content">
-                <span className="placeholder-icon">🖼️</span>
                 <span className="placeholder-text">Project Image</span>
               </div>
             </div>
@@ -148,7 +150,7 @@ function App() {
   )
 
   const renderAboutPage = () => (
-    <main>
+    <main className="main-container">
       <h1 className="portfolio-title">About Me</h1>
       
       <div className="about-image-placeholder">
@@ -191,28 +193,36 @@ function App() {
     </main>
   )
 
-  return (
-    <div className="portfolio-wrapper">
-      <PrismaticBurst
-        animationType="rotate3d"
-        intensity={2}
-        speed={0.2}
-        distort={5}
-        paused={false}
-        offset={{ x: 0, y: 0 }}
-        hoverDampness={0.25}
-        rayCount={24}
-        mixBlendMode="lighten"
-        colors={['#ffffff', '#aaaecf', '#ffffff']}
-      />
-      <div className={`relative z-10 portfolio-container ${currentPage === 'projects' || currentPage === 'about' ? 'projects-container' : ''}`}>
-        {renderNavigation()}
-        {currentPage === 'home' && renderHomePage()}
-        {currentPage === 'projects' && renderProjectsPage()}
-        {currentPage === 'about' && renderAboutPage()}
-      </div>
+return (
+  <div className="portfolio-wrapper">
+    <PrismaticBurst
+      animationType="rotate3d"
+      intensity={2}
+      speed={0.2}
+      distort={5}
+      paused={false}
+      offset={{ x: 0, y: 0 }}
+      hoverDampness={0.25}
+      rayCount={24}
+      mixBlendMode="lighten"
+      colors={['#ffffff', '#aaaecf', '#ffffff']}
+    />
+  <PixelTrail
+    gridSize={100}
+    trailSize={0.05}
+    maxAge={250}
+    interpolate={5}
+    color="#ffffff"
+    gooeyFilter={{ id: "custom-goo-filter", strength: 2 }}
+  />
+    <div className="portfolio-container">
+      {renderNavigation()}
+      {currentPage === 'home' && renderHomePage()}
+      {currentPage === 'projects' && renderProjectsPage()}
+      {currentPage === 'about' && renderAboutPage()}
     </div>
-  )
+  </div>
+)
 }
 
 export default App
